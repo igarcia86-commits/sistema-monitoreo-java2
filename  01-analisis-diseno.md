@@ -1,6 +1,4 @@
-# **Diseño**
-
-Se pretende hacer un sistema automatizado basado de riego automatico, se pretenden utilizar datos como temperatura, humedad y tiempo.
-
-Las operaciones que se debe hacer seran las lecturas de sensores de temperatura, humedad y tiempo.
-
+| Rol | Integrante | Usuario de GitHub | Fecha de inicio |
+| :--- | :--- | :--- | :--- |
+| Estudiante A | Iván Alejandro García Ramírez | igarcia86 | Jueves 9 de septiembre de 2026 |
+| Estudiante B | Alexis Emmanuel González Rico | alemgori-max | Jueves 9 de septiembre de 2026 |
