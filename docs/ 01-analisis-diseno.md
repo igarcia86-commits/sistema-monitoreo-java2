@@ -28,3 +28,42 @@ Las restricciones del sistema son que el nivel nunca debe ser negativo  ni super
 ## 4. Relaciones entre los objetos
 - **SensorNivel → Tanque:** El sensor necesita leer la información del tanque para obtener la medición.
 - **División de trabajo:** El **Tanque** es el único que cambia su nivel de líquido. El **SensorNivel** solo lee y verifica el valor sin modificarlo.
+
+# Fase 3. Diseño orientado a objetos y UML
+
+## 5. Diseño de clases
+
+| Clase | Atributos propuestos | Tipo de dato | Métodos propuestos | Responsabilidad |
+| :--- | :--- | :--- | :--- | :--- |
+| **Tanque** | `- id`<br>`- capacidadMaxima`<br>`- nivelActual`<br>`- estado` | String<br>double<br>double<br>String | `+ Tanque(id, capacidad)`<br>`+ llenar(cantidad)`<br>`+ vaciar(cantidad)`<br>`+ detener()`<br>`+ getNivel()`<br>`+ getPorcentaje()`<br>`+ getEstado()` | Mantener los límites de líquido seguros y actualizar su estado operativo. |
+| **SensorNivel** | `- idSensor` | String | `+ SensorNivel(id)`<br>`+ medir(Tanque t)`<br>`+ esLecturaValida(lectura, Tanque t)` | Extraer el nivel actual del tanque sin alterarlo. |
+
+## 6. Diagrama UML inicial
+
+```text
+-------------------------
+         Tanque
+-------------------------
+- id : String
+- capacidadMaxima : double
+- nivelActual : double
+- estado : String
+-------------------------
++ Tanque(id : String, capacidadMaxima : double)
++ llenar(cantidad : double) : void
++ vaciar(cantidad : double) : void
++ detener() : void
++ getNivel() : double
++ getPorcentaje() : double
++ getEstado() : String
+-------------------------
+
+-------------------------
+      SensorNivel
+-------------------------
+- idSensor : String
+-------------------------
++ SensorNivel(idSensor : String)
++ medir(tanque : Tanque) : double
++ esLecturaValida(lectura : double, tanque : Tanque) : boolean
+-------------------------
