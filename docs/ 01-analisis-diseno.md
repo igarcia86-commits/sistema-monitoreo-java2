@@ -18,9 +18,13 @@ Todo el control del tanque estara ligado a los sensores del tanque, que seran lo
 
 ## 3. Estado y comportamiento
 
-
+| Objeto propuesto | Responsabilidad                                      | Información que debe conservar                                       | Comportamientos que debe realizar                                                    |
+|------------------|------------------------------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| Tanque           | Controla el nivel de llenado y sin salirse del rango | - Identificador<br>- capacidad Maxima<br> - nivel Actual<br>- estado | - Llenar o vaciar <br> -Mostrar estado actual <br>                                   |
+| ...Sensor        | Lee el estado de nivel del tanque                    | - Identificador <br>- Lectura                                        | - Medir el nivel del tanque<br> - Mostrar lectura<br> - Control de rangos de llenado |
 ## 4. Relaciones entre los objetos
 
+- **Sensor  → Tanque:** Trabajan en conjunto ya que el sensor se encarga de la lectura del nivel del tanque. 
 # Fase 3. Diseño orientado a objetos y UML
 
 ## 5. Diseño de clases
