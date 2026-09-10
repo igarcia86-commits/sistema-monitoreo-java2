@@ -40,35 +40,8 @@ El Tanque que cambia su nivel de líquido y su estado depende del sensor de nive
 
 | Clase | Atributos | Tipo de dato | Métodos | Responsabilidad |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tanque** | `- idTanque`<br>`- capacidadMax`<br>`- nivelActual`<br>`- estadoOperacion` | String<br>double<br>double<br>String | `+ Tanque(idTanque, capacidad)`<br>`+ llenar(litros)`<br>`+ vaciar(litros)`<br>`+ detener()`<br>`+ getNivel()`<br>`+ getPorcentaje()`<br>`+ getEstado()` | Guardar cuánto líquido hay, cambiar el estado y cuidar que no se pase del límite ni baje de cero. |
-| **SensorNivel** | `- idSensor` | String | `+ SensorNivel(idSensor)`<br>`+ medir(Tanque t)`<br>`+ validarLectura(lectura, Tanque t)` | Leer el nivel del tanque y revisar que el valor tenga sentido. |
+| **Tanque** | idTanque<br>capacidadMax<br>nivelActual<br>estadoOperacion | Alfanumérico<br>Numérico<br>Numérico<br>Alfanumérico | Tanque(idTanque, capacidad)<br>llenar(litros)<br>vaciar(litros)<br>detener()<br>getNivel()<br>getPorcentaje()<br>getEstado() | Guardar cuánto líquido hay, cambiar el estado y cuidar que no se pase del límite ni baje de cero. |
+| **SensorNivel** | idSensor | Alfanumérico | SensorNivel(idSensor)<br>medir(Tanque t)<br>validarLectura(lectura, Tanque t) | Leer el nivel del tanque y revisar que el valor tenga sentido sin modificarlo. |
 
 ## 6. Diagrama UML inicial
 
-```text
--------------------------
-         Tanque
--------------------------
-- idTanque : String
-- capacidadMax : double
-- nivelActual : double
-- estadoOperacion : String
--------------------------
-+ Tanque(idTanque : String, capacidad : double)
-+ llenar(litros : double) : void
-+ vaciar(litros : double) : void
-+ detener() : void
-+ getNivel() : double
-+ getPorcentaje() : double
-+ getEstado() : String
--------------------------
-
--------------------------
-      SensorNivel
--------------------------
-- idSensor : String
--------------------------
-+ SensorNivel(idSensor : String)
-+ medir(tanque : Tanque) : double
-+ validarLectura(lectura : double, tanque : Tanque) : boolean
--------------------------
