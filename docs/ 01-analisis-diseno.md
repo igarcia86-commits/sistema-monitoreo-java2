@@ -45,4 +45,4 @@ El Tanque que cambia su nivel de líquido y su estado depende del sensor de nive
 
 ## 6. Diagrama UML inicial
 
-![Diagrama UML inicial](diagrama.png)
+![diagrama.jpg](../images/diagrama.jpg)
