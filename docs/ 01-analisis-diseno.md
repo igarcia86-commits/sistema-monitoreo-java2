@@ -34,12 +34,14 @@ El Sensor de nivel se relaciona con el Tanque porque necesita leer el volumen qu
 
 El Tanque que cambia su nivel de líquido y su estado depende del sensor de nivel.
 
+# Fase 3. Diseño orientado a objetos y UML
+
 ## 5. Diseño de clases
 
-| Clase | Atributos propuestos | Tipo de dato | Métodos propuestos | Responsabilidad |
+| Clase | Atributos | Tipo de dato | Métodos | Responsabilidad |
 | :--- | :--- | :--- | :--- | :--- |
-| **Tanque** | `- id`<br>`- capacidadMaxima`<br>`- nivelActual`<br>`- estado` | String<br>double<br>double<br>String | `+ Tanque(id, capacidad)`<br>`+ llenar(cantidad)`<br>`+ vaciar(cantidad)`<br>`+ detener()`<br>`+ getNivel()`<br>`+ getPorcentaje()`<br>`+ getEstado()` | Mantener los límites de líquido seguros y actualizar su estado operativo. |
-| **SensorNivel** | `- idSensor` | String | `+ SensorNivel(id)`<br>`+ medir(Tanque t)`<br>`+ esLecturaValida(lectura, Tanque t)` | Extraer el nivel actual del tanque sin alterarlo. |
+| **Tanque** | `- idTanque`<br>`- capacidadMax`<br>`- nivelActual`<br>`- estadoOperacion` | String<br>double<br>double<br>String | `+ Tanque(idTanque, capacidad)`<br>`+ llenar(litros)`<br>`+ vaciar(litros)`<br>`+ detener()`<br>`+ getNivel()`<br>`+ getPorcentaje()`<br>`+ getEstado()` | Guardar cuánto líquido hay, cambiar el estado y cuidar que no se pase del límite ni baje de cero. |
+| **SensorNivel** | `- idSensor` | String | `+ SensorNivel(idSensor)`<br>`+ medir(Tanque t)`<br>`+ validarLectura(lectura, Tanque t)` | Leer el nivel del tanque y revisar que el valor tenga sentido. |
 
 ## 6. Diagrama UML inicial
 
@@ -47,14 +49,14 @@ El Tanque que cambia su nivel de líquido y su estado depende del sensor de nive
 -------------------------
          Tanque
 -------------------------
-- id : String
-- capacidadMaxima : double
+- idTanque : String
+- capacidadMax : double
 - nivelActual : double
-- estado : String
+- estadoOperacion : String
 -------------------------
-+ Tanque(id : String, capacidadMaxima : double)
-+ llenar(cantidad : double) : void
-+ vaciar(cantidad : double) : void
++ Tanque(idTanque : String, capacidad : double)
++ llenar(litros : double) : void
++ vaciar(litros : double) : void
 + detener() : void
 + getNivel() : double
 + getPorcentaje() : double
@@ -68,5 +70,5 @@ El Tanque que cambia su nivel de líquido y su estado depende del sensor de nive
 -------------------------
 + SensorNivel(idSensor : String)
 + medir(tanque : Tanque) : double
-+ esLecturaValida(lectura : double, tanque : Tanque) : boolean
++ validarLectura(lectura : double, tanque : Tanque) : boolean
 -------------------------
