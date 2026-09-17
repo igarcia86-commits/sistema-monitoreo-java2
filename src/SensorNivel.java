@@ -12,4 +12,20 @@ public class SensorNivel {
         this.valorMedido = 0.0;
     }
 
+    public void hacerLectura() {
+
+        valorMedido = tanqueAsociado.getNivel();
+    }
+
+    public double getValorMedido() {
+        return valorMedido;
+    }
+
+    public boolean esLecturaValida() {
+        if (valorMedido >= 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
